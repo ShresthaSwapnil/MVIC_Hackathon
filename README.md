@@ -1,1 +1,1 @@
-# MVIC_Hackathon
+# Web Innovators Hackathon 2024
