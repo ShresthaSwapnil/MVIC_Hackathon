@@ -142,19 +142,19 @@ const Hero = () => {
             <h1 className="special-font hero-heading text-blue-75 text-base">
               Web I<b>n</b>novators
             </h1>
-            <h1 className="special-font hero-heading text-blue-75 text-base py-12">
+            <h1 className="special-font hero-heading text-blue-75 text-base py-12 max-sm:py-3">
               h<b>a</b>ckathon
             </h1>
             <p className="mb-5 max-w-100 font-robert-regular text-blue-100">
               The ultimate challenge for frontend web developers to innovate and
               inspire.
             </p>
-            {/* <Button
+            <Button
               id="watch-trailer"
               title="Register Now"
               leftIcon={<TiLocationArrow />}
-              containerClass="!bg-default flex-center gap-1"
-            /> */}
+              containerClass="lg:hidden !bg-default flex-center gap-1"
+            />
           </div>
         </div>
       </div>
