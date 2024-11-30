@@ -137,7 +137,7 @@ const Hero = () => {
           tech titans
         </h1>
 
-        <div className="absolute left-0 top-0 z-40 size-full">
+        <div className="absolute left-0 top-10 z-40 size-full">
           <div className="mt-24 px-5 sm:px-10">
             <h1 className="special-font hero-heading text-blue-75 text-base">
               Web I<b>n</b>novators
@@ -149,12 +149,12 @@ const Hero = () => {
               The ultimate challenge for frontend web developers to innovate and
               inspire.
             </p>
-            <Button
+            {/* <Button
               id="watch-trailer"
               title="Register Now"
               leftIcon={<TiLocationArrow />}
               containerClass="!bg-default flex-center gap-1"
-            />
+            /> */}
           </div>
         </div>
       </div>

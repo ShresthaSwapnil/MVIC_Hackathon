@@ -31,7 +31,10 @@ const About = () => {
         <h2 className="font-general text-sm uppercase md:text-[10px]">
           Welcome to Web Innovators Hackathon
         </h2>
-        <AnimatedTitle />
+        <AnimatedTitle
+          title="Disc<b>o</b>ver the largest event hosted by MVIC Students"
+          containerClass="mt-5 !text-black text-center"
+        />
         <div className="abour-subtext">
           <p>
             Title Sponsor <b>Mid-Valley International College</b>
