@@ -89,7 +89,7 @@ const Features = () => (
           src="videos/feature-1.mp4"
           title={
             <>
-              Public Tra<b>n</b>sport
+              L<b>o</b>cal Touris<b>m</b> <b>a</b>nd Cultural Heritage
             </>
           }
           description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
@@ -102,7 +102,7 @@ const Features = () => (
             src="videos/feature-2.mp4"
             title={
               <>
-                zig<b>m</b>a
+                Envir<b>o</b>n<b>m</b>ental Aw<b>a</b>re<b>n</b>ess
               </>
             }
             description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
@@ -114,7 +114,7 @@ const Features = () => (
             src="videos/feature-3.mp4"
             title={
               <>
-                n<b>e</b>xus
+                Public Tra<b>n</b>sp<b>o</b>rt
               </>
             }
             description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
@@ -126,7 +126,7 @@ const Features = () => (
             src="videos/feature-4.mp4"
             title={
               <>
-                az<b>u</b>l
+                Loc<b>a</b>l F<b>o</b>od and Restur<b>a</b>nt Disc<b>o</b>very
               </>
             }
             description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
@@ -139,7 +139,7 @@ const Features = () => (
           src="videos/feature-1.mp4"
           title={
             <>
-              Public Tra<b>n</b>sport
+              Digit<b>a</b>l Marketpl<b>a</b>ce for l<b>o</b>cal artist
             </>
           }
           description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
