@@ -1,44 +1,44 @@
-import { useEffect, useRef, useState } from "react";
-import Button from "./Button";
-import { TiLocationArrow } from "react-icons/ti";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import { TiLocationArrow } from "react-icons/ti";
+import { useEffect, useRef, useState } from "react";
+
+import Button from "./Button";
+import VideoPreview from "./VideoPreview";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [loadedVideo, setLoadedVideo] = useState(0);
 
-  const totalVideo = 4;
-  const nextVideoRef = useRef(null);
+  const [loading, setLoading] = useState(true);
+  const [loadedVideos, setLoadedVideos] = useState(0);
 
-  const upcomingVideoIndex = (currentIndex % totalVideo) + 1;
+  const totalVideos = 4;
+  const nextVdRef = useRef(null);
 
   const handleVideoLoad = () => {
-    setLoadedVideo((prev) => prev + 1);
-  };
-
-  const handleMiniVideoClick = () => {
-    setHasClicked(true);
-
-    setCurrentIndex(upcomingVideoIndex);
+    setLoadedVideos((prev) => prev + 1);
   };
 
   useEffect(() => {
-    if (loadedVideo === totalVideo - 1) {
-      setIsLoading(false);
+    if (loadedVideos === totalVideos - 1) {
+      setLoading(false);
     }
-  }, [loadedVideo]);
+  }, [loadedVideos]);
+
+  const handleMiniVdClick = () => {
+    setHasClicked(true);
+
+    setCurrentIndex((prevIndex) => (prevIndex % totalVideos) + 1);
+  };
 
   useGSAP(
     () => {
       if (hasClicked) {
         gsap.set("#next-video", { visibility: "visible" });
-
         gsap.to("#next-video", {
           transformOrigin: "center center",
           scale: 1,
@@ -46,9 +46,8 @@ const Hero = () => {
           height: "100%",
           duration: 1,
           ease: "power1.inOut",
-          onStart: () => nextVideoRef.current.play(),
+          onStart: () => nextVdRef.current.play(),
         });
-
         gsap.from("#current-video", {
           transformOrigin: "center center",
           scale: 0,
@@ -57,18 +56,20 @@ const Hero = () => {
         });
       }
     },
-    { dependencies: [currentIndex], revertOnUpdate: true }
+    {
+      dependencies: [currentIndex],
+      revertOnUpdate: true,
+    }
   );
 
   useGSAP(() => {
     gsap.set("#video-frame", {
-      clipPath: "polygon(14% 0%, 72% 0%, 90% 90%, 0% 100%)",
-      borderRadius: "0 0 40% 10%",
+      clipPath: "polygon(14% 0, 72% 0, 88% 90%, 0 95%)",
+      borderRadius: "0% 0% 40% 10%",
     });
-
     gsap.from("#video-frame", {
       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      borderRadius: "0 0 0 0",
+      borderRadius: "0% 0% 0% 0%",
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: "#video-frame",
@@ -83,61 +84,67 @@ const Hero = () => {
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
-      {isLoading && (
-        <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-blue-50">
+      {loading && (
+        <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
+          {/* https://uiverse.io/G4b413l/tidy-walrus-92 */}
           <div className="three-body">
-            <div className="three-body__dot" />
-            <div className="three-body__dot" />
-            <div className="three-body__dot" />
+            <div className="three-body__dot"></div>
+            <div className="three-body__dot"></div>
+            <div className="three-body__dot"></div>
           </div>
         </div>
       )}
+
       <div
         id="video-frame"
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
       >
         <div>
           <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
-            <div
-              onClick={handleMiniVideoClick}
-              className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
-            >
-              <video
-                ref={nextVideoRef}
-                src={getVideoSrc(upcomingVideoIndex)}
-                loop
-                muted
-                id="current-video"
-                className="size-64 origin-center scale-150 object-cover object-center"
-                onLoadedData={handleVideoLoad}
-              />
-            </div>
+            <VideoPreview>
+              <div
+                onClick={handleMiniVdClick}
+                className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
+              >
+                <video
+                  ref={nextVdRef}
+                  src={getVideoSrc((currentIndex % totalVideos) + 1)}
+                  loop
+                  muted
+                  id="current-video"
+                  className="size-64 origin-center scale-150 object-cover object-center"
+                  onLoadedData={handleVideoLoad}
+                />
+              </div>
+            </VideoPreview>
           </div>
+
           <video
-            ref={nextVideoRef}
+            ref={nextVdRef}
             src={getVideoSrc(currentIndex)}
             loop
             muted
             id="next-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
+            onLoadedData={handleVideoLoad}
           />
-
           <video
             src={getVideoSrc(
-              currentIndex === totalVideo - 1 ? 1 : currentIndex
+              currentIndex === totalVideos - 1 ? 1 : currentIndex
             )}
             autoPlay
             loop
             muted
-            className=" absolute left-0 top-0 size-full object-cover object-center"
+            className="absolute left-0 top-0 size-full object-cover object-center"
             onLoadedData={handleVideoLoad}
           />
         </div>
+
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
-          tech titans
+          tech tit<b>an</b>s
         </h1>
 
-        <div className="absolute left-0 top-10 z-40 size-full">
+        <div className="absolute left-0 top-0 z-40 size-full">
           <div className="mt-24 px-5 sm:px-10">
             <h1 className="special-font hero-heading text-blue-75 text-base">
               Web I<b>n</b>novators
@@ -149,6 +156,7 @@ const Hero = () => {
               The ultimate challenge for frontend web developers to innovate and
               inspire.
             </p>
+
             <Button
               id="watch-trailer"
               title="Register Now"
@@ -159,11 +167,31 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
       <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-        tech titans
+        tech tit<b>an</b>s
       </h1>
     </div>
   );
 };
 
 export default Hero;
+{
+  /* <h1 className="special-font hero-heading text-blue-75 text-base">
+              Web I<b>n</b>novators
+            </h1>
+            <h1 className="special-font hero-heading text-blue-75 text-base py-12 max-sm:py-3">
+              h<b>a</b>ckathon
+            </h1>
+            <p className="mb-5 max-w-100 font-robert-regular text-blue-100">
+              The ultimate challenge for frontend web developers to innovate and
+              inspire.
+            </p> 
+            <Button
+              id="watch-trailer"
+              title="Register Now"
+              leftIcon={<TiLocationArrow />}
+              containerClass="lg:hidden !bg-default flex-center gap-1"
+              formLink="https://forms.gle/FDF2UvJGFkEbYq929"
+            />*/
+}
