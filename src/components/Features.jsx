@@ -78,8 +78,10 @@ const Features = () => (
   <section className="bg-black pb-52">
     <div className="container mx-auto px-3 md:px-10">
       <div className="px-5 py-32">
-        <p className="font-circular-web text-lg text-blue-50">Tracks</p>
-        <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
+        <p className="hero-heading special-font text-lg text-blue-50">
+          Tr<b>a</b>cks
+        </p>
+        <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-100 mt-8">
           We have decided on 5 Tracks for Our First Hackathon
         </p>
       </div>
