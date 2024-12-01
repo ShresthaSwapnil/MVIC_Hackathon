@@ -5,7 +5,7 @@ import { TiLocationArrow } from "react-icons/ti";
 
 import Button from "./Button";
 
-const navItems = ["Home", "About", "Contact"];
+const navItems = ["Home", "About", "Countdown", "Contact"];
 
 const NavBar = () => {
   // State for toggling audio and visual indicator
@@ -70,13 +70,14 @@ const NavBar = () => {
         <nav className="flex size-full items-center justify-between p-4">
           {/* Logo and Product button */}
           <div className="flex items-center gap-7">
-            <img src="/img/logo.png" alt="logo" className="w-10" />
+            <img src="/img/logo.jpg" alt="logo" className="w-10 rounded-full" />
 
             <Button
               id="product-button"
               title="Register"
               rightIcon={<TiLocationArrow />}
               containerClass="bg-default md:flex hidden items-center justify-center gap-1"
+              formLink="https://forms.gle/FDF2UvJGFkEbYq929"
             />
           </div>
 

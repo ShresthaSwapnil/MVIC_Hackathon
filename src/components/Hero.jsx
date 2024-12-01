@@ -79,7 +79,7 @@ const Hero = () => {
     });
   });
 
-  const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
+  const getVideoSrc = (index) => `videos/Hackathon-${index}.mp4`;
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
@@ -154,6 +154,7 @@ const Hero = () => {
               title="Register Now"
               leftIcon={<TiLocationArrow />}
               containerClass="lg:hidden !bg-default flex-center gap-1"
+              formLink="https://forms.gle/FDF2UvJGFkEbYq929"
             />
           </div>
         </div>

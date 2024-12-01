@@ -2,7 +2,7 @@ import { FaDiscord, FaInstagram } from "react-icons/fa";
 
 const socialLinks = [
   { href: "https://discord.com", icon: <FaDiscord /> },
-  { href: "https://twitter.com", icon: <FaInstagram /> },
+  { href: "https://www.instagram.com/techtitans_np/", icon: <FaInstagram /> },
 ];
 
 const Footer = () => {

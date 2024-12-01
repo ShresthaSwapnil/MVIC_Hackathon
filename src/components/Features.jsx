@@ -38,7 +38,7 @@ export const BentoTilt = ({ children, className = "" }) => {
   );
 };
 
-export const BentoCard = ({ src, title, description }) => {
+export const BentoCard = ({ src, title, description, textCol }) => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [hoverOpacity, setHoverOpacity] = useState(0);
   const hoverButtonRef = useRef(null);
@@ -62,7 +62,7 @@ export const BentoCard = ({ src, title, description }) => {
         autoPlay
         className="absolute left-0 top-0 size-full object-cover object-center"
       />
-      <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
+      <div className={textCol}>
         <div>
           <h1 className="bento-title special-font">{title}</h1>
           {description && (
@@ -86,63 +86,68 @@ const Features = () => (
 
       <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
         <BentoCard
-          src="videos/feature-1.mp4"
+          src="videos/track-1.mp4"
           title={
             <>
               L<b>o</b>cal Touris<b>m</b> <b>a</b>nd Cultural Heritage
             </>
           }
-          description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
+          description="Celebrate and preserve the stories that define our heritage."
+          textCol="relative z-10 flex size-full flex-col justify-between p-5 text-black opacity-75"
         />
       </BentoTilt>
 
       <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-2 max-sm:grid-rows-3 gap-7">
         <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
           <BentoCard
-            src="videos/feature-2.mp4"
+            src="videos/track-2.mp4"
             title={
               <>
                 Envir<b>o</b>n<b>m</b>ental Aw<b>a</b>re<b>n</b>ess
               </>
             }
-            description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
+            description="Innovate for a greener, more sustainable future"
+            textCol="relative z-10 flex size-full flex-col justify-between p-5 text-black"
           />
         </BentoTilt>
 
         <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
           <BentoCard
-            src="videos/feature-3.mp4"
+            src="videos/track-3.mp4"
             title={
               <>
                 Public Tra<b>n</b>sp<b>o</b>rt
               </>
             }
-            description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
+            description="Revolutionizing how we move, together."
+            textCol="relative z-10 flex size-full flex-col justify-between p-5 text-blue-300"
           />
         </BentoTilt>
 
         <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
           <BentoCard
-            src="videos/feature-4.mp4"
+            src="videos/track-4.mp4"
             title={
               <>
                 Loc<b>a</b>l F<b>o</b>od and Restur<b>a</b>nt Disc<b>o</b>very
               </>
             }
-            description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
+            description="Connecting food lovers to local culinary gems."
+            textCol="relative z-10 flex size-full flex-col justify-between p-5 text-white"
           />
         </BentoTilt>
       </div>
 
       <BentoTilt className="border-hsla relative my-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
         <BentoCard
-          src="videos/feature-1.mp4"
+          src="videos/track-5.mp4"
           title={
             <>
               Digit<b>a</b>l Marketpl<b>a</b>ce for l<b>o</b>cal artist
             </>
           }
-          description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
+          description="Empowering creativity, one artist at a time."
+          textCol="relative z-10 flex size-full flex-col justify-between p-5 text-default"
         />
       </BentoTilt>
 
@@ -159,7 +164,7 @@ const Features = () => (
 
         <BentoTilt className="bento-tilt_2">
           <video
-            src="videos/feature-5.mp4"
+            src="videos/title.mp4"
             loop
             muted
             autoPlay
