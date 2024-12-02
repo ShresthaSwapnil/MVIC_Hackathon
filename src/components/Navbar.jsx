@@ -90,7 +90,9 @@ const NavBar = () => {
               formLink="https://forms.gle/FDF2UvJGFkEbYq929"
             />
           </div>
-
+          <p className="font-general hidden max-sm:flex-center text-white ">
+            Best viewed on desktop
+          </p>
           {/* Navigation Links and Audio Button */}
           <div className="flex h-full items-center">
             <div className="hidden md:block">
