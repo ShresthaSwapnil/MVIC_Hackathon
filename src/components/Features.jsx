@@ -60,13 +60,13 @@ export const BentoCard = ({ src, title, description, textCol }) => {
         loop
         muted
         autoPlay
-        className="absolute left-0 top-0 size-full object-cover object-center"
+        className="absolute h-[64%] left-0 bottom-0 size-full object-cover object-center"
       />
       <div className={textCol}>
         <div>
           <h1 className="bento-title special-font">{title}</h1>
           {description && (
-            <p className="mt-3 max-w-64 text-xs md:text-base">{description}</p>
+            <p className="mt-3 max-w-68 text-xs md:text-base">{description}</p>
           )}
         </div>
       </div>
@@ -95,7 +95,7 @@ const Features = () => (
             </>
           }
           description="Celebrate and preserve the stories that define our heritage."
-          textCol="relative z-10 flex size-full flex-col justify-between p-5 text-black opacity-75"
+          textCol="relative z-10 flex size-full flex-col justify-between p-5 text-white"
         />
       </BentoTilt>
 
@@ -109,7 +109,7 @@ const Features = () => (
               </>
             }
             description="Innovate for a greener, more sustainable future"
-            textCol="relative z-10 flex size-full flex-col justify-between p-5 text-black"
+            textCol="relative z-10 flex size-full flex-col justify-between p-5 text-white"
           />
         </BentoTilt>
 
