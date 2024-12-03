@@ -152,7 +152,7 @@ const Hero = () => {
             <h1 className="special-font hero-heading text-blue-75 text-base py-12 max-sm:py-3">
               h<b>a</b>ckathon
             </h1>
-            <p className="mb-5 max-w-100 font-robert-regular text-blue-100">
+            <p className="mb-5 max-w-100 font-circular-web text-blue-100">
               The ultimate challenge for frontend web developers to innovate and
               inspire.
             </p>

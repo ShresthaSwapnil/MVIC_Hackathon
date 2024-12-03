@@ -6,6 +6,7 @@ import Features from "./components/Features";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Countdown from "./components/Countdown";
+import Registration from "./components/Registration";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Hero />
       <About />
       <Features />
+      <Registration />
       <Countdown />
       <Contact />
       <Footer />
