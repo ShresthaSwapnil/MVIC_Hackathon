@@ -64,7 +64,7 @@ export const BentoCard = ({ src, title, description, textCol }) => {
       />
       <div className={textCol}>
         <div>
-          <h1 className="bento-title special-font">{title}</h1>
+          <h1 className="bento-title special-font max-sm:text-2xl">{title}</h1>
           {description && (
             <p className="mt-3 max-w-68 text-xs md:text-base">{description}</p>
           )}
