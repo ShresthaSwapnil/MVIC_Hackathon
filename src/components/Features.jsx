@@ -64,7 +64,9 @@ export const BentoCard = ({ src, title, description, textCol }) => {
       />
       <div className={textCol}>
         <div>
-          <h1 className="bento-title special-font max-sm:text-2xl">{title}</h1>
+          <h1 className="bento-title special-font max-sm:text-2xl max-sm:font-robert-medium">
+            {title}
+          </h1>
           {description && (
             <p className="mt-3 max-w-68 text-xs md:text-base">{description}</p>
           )}
@@ -89,11 +91,7 @@ const Features = () => (
       <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
         <BentoCard
           src="videos/track-1.mp4"
-          title={
-            <>
-              L<b>o</b>cal Touris<b>m</b> <b>a</b>nd Cultural Heritage
-            </>
-          }
+          title={<>Local Tourism and Cultural Heritage</>}
           description="Celebrate and preserve the stories that define our heritage."
           textCol="relative z-10 flex size-full flex-col justify-between p-5 text-white"
         />
@@ -103,11 +101,7 @@ const Features = () => (
         <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
           <BentoCard
             src="videos/track-2.mp4"
-            title={
-              <>
-                Envir<b>o</b>n<b>m</b>ental Aw<b>a</b>re<b>n</b>ess
-              </>
-            }
+            title={<>Environmental Awareness</>}
             description="Innovate for a greener, more sustainable future"
             textCol="relative z-10 flex size-full flex-col justify-between p-5 text-white"
           />
@@ -116,11 +110,7 @@ const Features = () => (
         <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
           <BentoCard
             src="videos/track-3.mp4"
-            title={
-              <>
-                Public Tra<b>n</b>sp<b>o</b>rt
-              </>
-            }
+            title={<>Public Transport</>}
             description="Revolutionizing how we move, together."
             textCol="relative z-10 flex size-full flex-col justify-between p-5 text-blue-300"
           />
@@ -129,11 +119,7 @@ const Features = () => (
         <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
           <BentoCard
             src="videos/track-4.mp4"
-            title={
-              <>
-                Loc<b>a</b>l F<b>o</b>od and Restur<b>a</b>nt Disc<b>o</b>very
-              </>
-            }
+            title={<>Local Food and Resturant Discovery</>}
             description="Connecting food lovers to local culinary gems."
             textCol="relative z-10 flex size-full flex-col justify-between p-5 text-white"
           />
@@ -143,11 +129,7 @@ const Features = () => (
       <BentoTilt className="border-hsla relative my-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
         <BentoCard
           src="videos/track-5.mp4"
-          title={
-            <>
-              Digit<b>a</b>l Marketpl<b>a</b>ce for l<b>o</b>cal artist
-            </>
-          }
+          title={<>Digital Marketplace for local artist</>}
           description="Empowering creativity, one artist at a time."
           textCol="relative z-10 flex size-full flex-col justify-between p-5 text-default"
         />

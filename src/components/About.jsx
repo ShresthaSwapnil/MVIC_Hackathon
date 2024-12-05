@@ -46,11 +46,17 @@ const About = () => {
       </div>
       <div className="h-dvh w-screen" id="clip">
         <div className="mask-clip-path about-image">
-          <img
-            src="img/About.jpg"
-            alt="Background"
-            className="absolute left-0 top-0 size-full object-cover"
-          />
+          <picture>
+            {/* Image for desktop */}
+            <source media="(min-width: 768px)" srcSet="img/About.jpg" />
+            {/* Image for mobile */}
+            <source media="(max-width: 767px)" srcSet="img/About_mobile.jpg" />
+            <img
+              src="img/About-desktop.jpg" // Fallback image
+              alt="Background"
+              className="absolute left-0 top-0 size-full object-cover"
+            />
+          </picture>
         </div>
       </div>
     </div>
