@@ -32,8 +32,8 @@ const About = () => {
           Welcome to Web Innovators Hackathon
         </h2>
         <AnimatedTitle
-          title="Disc<b>o</b>ver the largest event hosted by MVIC Students"
-          containerClass="mt-5 !text-black text-center"
+          title="Discover the largest event hosted by MVIC Students"
+          containerClass="mt-5 !text-black text-center !max-sm:text-[4rem]"
         />
         <div className="abour-subtext">
           <p>
