@@ -1,5 +1,4 @@
 import Button from "./Button";
-import { TiLocationArrow } from "react-icons/ti";
 
 const Registration = () => {
   return (
