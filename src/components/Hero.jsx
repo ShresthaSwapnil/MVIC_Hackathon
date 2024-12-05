@@ -25,7 +25,7 @@ const Hero = () => {
     });
   });
 
-  const getImageSrc = () => "img/Hero.jpg";
+  const getImageSrc = () => "img/Heroo.jpg";
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
@@ -33,11 +33,17 @@ const Hero = () => {
         id="image-frame"
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
       >
-        <img
-          src={getImageSrc()}
-          alt="Hackathon Preview"
-          className="absolute left-0 top-0 size-full object-cover object-center"
-        />
+        <picture>
+          {/* Image for desktop */}
+          <source media="(min-width: 768px)" srcSet="img/Hero_desktop.jpg" />
+          {/* Image for mobile */}
+          <source media="(max-width: 767px)" srcSet="img/Hero_mobile.jpg" />
+          <img
+            src="img/Hero.jpg" // Fallback image
+            alt="Hackathon Preview"
+            className="absolute left-0 top-0 size-full object-cover object-center"
+          />
+        </picture>
 
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
           tech tit<b>an</b>s
