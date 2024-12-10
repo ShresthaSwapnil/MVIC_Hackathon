@@ -28,7 +28,7 @@ const Hero = () => {
   const getImageSrc = () => "img/Heroo.jpg";
 
   return (
-    <div className="relative h-dvh w-screen overflow-x-hidden">
+    <div id="home" className="relative h-dvh w-screen overflow-x-hidden">
       <div
         id="image-frame"
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
@@ -62,13 +62,13 @@ const Hero = () => {
               inspire.
             </p>
 
-            <Button
+            {/* <Button
               id="watch-trailer"
               title="Register Now"
               leftIcon={<TiLocationArrow />}
               containerClass="lg:hidden !bg-default flex-center gap-1"
               formLink="https://forms.gle/FDF2UvJGFkEbYq929"
-            />
+            /> */}
           </div>
         </div>
       </div>

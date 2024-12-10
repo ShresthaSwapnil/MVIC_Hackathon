@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Countdown from "./components/Countdown";
 import Registration from "./components/Registration";
+import HackathonSchedule from "./components/HackathonSchedule";
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
       <Hero />
       <About />
       <Features />
-      <Registration />
+      {/* <Registration /> */}
+      {/* <HackathonSchedule /> */}
       <Countdown />
       <Contact />
       <Footer />
