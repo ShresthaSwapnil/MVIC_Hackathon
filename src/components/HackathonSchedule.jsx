@@ -1,7 +1,8 @@
 import React from "react";
-import { BentoTilt } from "./Features"; // Assuming BentoTilt is in the same folder
+import { BentoTilt } from "./Features";
 import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
+import Schedule from "../Hackathon_Schedule-1.pdf";
 
 const HackathonSchedule = () => {
   const schedule = [
@@ -11,18 +12,45 @@ const HackathonSchedule = () => {
         { time: "9:00 AM", event: "Opening Ceremony" },
         { time: "9:45 AM", event: "Class Allocation" },
         { time: "10:00 AM", event: "Hackathon Starts" },
+        { time: "11:15 AM", event: "Icebreaker Activity (15 mins)" },
+        {
+          time: "12:30 PM",
+          event: 'Tech Talk: "Innovating with Technology" (20 mins)',
+        },
         { time: "1:00 PM", event: "Lunch Break" },
+        {
+          time: "2:30 PM",
+          event: "Collaborative Brainstorming Session (20 mins)",
+        },
         { time: "4:00 PM", event: "Quiz or Game Session" },
+        {
+          time: "5:30 PM",
+          event: "Coffee Break + Energizer Activity (15 mins)",
+        },
         { time: "7:00 PM", event: "Dinner" },
+        {
+          time: "7:45 PM",
+          event: "Hackathon Work Session Continues (Optional Mentor Support)",
+        },
       ],
     },
     {
       day: "Day 2",
       events: [
         { time: "8:00 AM", event: "Tea/Coffee and Cookies" },
+        { time: "9:30 AM", event: "Morning Energizer Activity (15 mins)" },
         { time: "10:00 AM", event: "Midway Check-In with Mentors" },
+        {
+          time: "11:30 AM",
+          event: 'Workshop: "Effective Debugging Techniques" (20 mins)',
+        },
         { time: "1:00 PM", event: "Lunch Break" },
+        { time: "2:30 PM", event: "Peer Review Session (20 mins)" },
         { time: "3:00 PM", event: "Debugging and Testing Session" },
+        {
+          time: "4:30 PM",
+          event: 'Group Discussion: "Lessons Learned So Far" (15 mins)',
+        },
         { time: "7:00 PM", event: "Dinner" },
         { time: "9:00 PM", event: "Late Night Work Hours" },
       ],
@@ -31,8 +59,8 @@ const HackathonSchedule = () => {
       day: "Day 3",
       events: [
         { time: "8:30 AM", event: "Submission Deadline" },
-        { time: "9:00 AM", event: "Hackathon Ends" },
-        { time: "10:00 AM", event: "Closing Ceremony & Results" },
+        { time: "9:00 AM", event: "Judging Starts" },
+        { time: "12:00", event: "Results & Closing Ceremony" },
       ],
     },
   ];
@@ -69,8 +97,8 @@ const HackathonSchedule = () => {
         ))}
         <Button
           title="Download the Schedule!"
-          containerClass="bg-default items-center justify-center"
-          formLink="https://forms.gle/FDF2UvJGFkEbYq929"
+          isDownload={true}
+          downloadFile={Schedule}
         />
       </div>
     </section>
