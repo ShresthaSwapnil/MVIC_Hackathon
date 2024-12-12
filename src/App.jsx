@@ -14,11 +14,11 @@ const App = () => {
     <main className="relative min-h-screen w-screen overflow-x-hidden">
       <Navbar />
       <Hero />
+      <Countdown />
       <About />
       <Features />
       {/* <Registration /> */}
       <HackathonSchedule />
-      <Countdown />
       <Contact />
       <Footer />
     </main>

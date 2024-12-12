@@ -31,7 +31,7 @@ const Countdown = () => {
   }
 
   return (
-    <div id="countdown" className="h-[40dvh] max-sm:h-dvh flex-center bg-black">
+    <div id="countdown" className="h-[40dvh] max-sm:h-dvh flex-center">
       <div className="bento-tilt_1 w-11/12 md:w-2/3 p-6 bg-default text-black">
         <h1 className="special-font text-center text-6xl font-zentry mb-6">
           Cou<b>n</b>td<b>o</b>wn Till the H<b>a</b>ckathon!
