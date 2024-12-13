@@ -1,8 +1,7 @@
 import React from "react";
 import { BentoTilt } from "./Features";
 import Button from "./Button";
-import { TiLocationArrow } from "react-icons/ti";
-import Schedule from "../Hackathon_Schedule-1.pdf";
+import Schedule from "../pdfs/Hackathon_Schedule-1.pdf";
 
 const HackathonSchedule = () => {
   const schedule = [
@@ -13,10 +12,6 @@ const HackathonSchedule = () => {
         { time: "9:45 AM", event: "Class Allocation" },
         { time: "10:00 AM", event: "Hackathon Starts" },
         { time: "11:15 AM", event: "Icebreaker Activity (15 mins)" },
-        {
-          time: "12:30 PM",
-          event: 'Tech Talk: "Innovating with Technology" (20 mins)',
-        },
         { time: "1:00 PM", event: "Lunch Break" },
         {
           time: "2:30 PM",
